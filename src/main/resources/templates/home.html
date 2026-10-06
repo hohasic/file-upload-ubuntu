@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>파일 업로드</title>
+</head>
+<body>
+
+<h1>파일 업로드</h1>
+
+<form th:action="@{/upload}"
+      method="post"
+      enctype="multipart/form-data">
+
+    <input type="file" name="file">
+
+    <button type="submit">업로드</button>
+
+</form>
+
+<hr>
+
+<h2>업로드 파일</h2>
+
+<div th:if="${savedFileName != null}">
+    <img th:src="@{/fileUpload/{fileName}(fileName=${savedFileName})}"
+         alt="업로드 이미지"
+         style="max-width: 600px;">
+</div>
+
+</body>
+</html>

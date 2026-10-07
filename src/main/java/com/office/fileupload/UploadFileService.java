@@ -22,7 +22,7 @@ public class UploadFileService {
 
         String fileOriName = file.getOriginalFilename();
         String fileExtension = fileOriName.substring(fileOriName.lastIndexOf("."), fileOriName.length());
-//        String uploadDir = "c:\\upload";
+//        String uploadDir = "c:/upload";
         String uploadDir = this.uploadDir;
 
         UUID uuid = UUID.randomUUID();
@@ -30,8 +30,8 @@ public class UploadFileService {
 
         // 업로드 디렉터리
         File uploadDirectory  = new File(uploadDir);
-        if(!uploadDirectory .exists())
-        	uploadDirectory .mkdirs();
+        if(!uploadDirectory.exists())
+        	uploadDirectory.mkdirs();
 
         // 실제 저장할 파일
         File saveFile =
